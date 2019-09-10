@@ -1,6 +1,9 @@
 import { Router } from 'express'
 import user from './user'
 import auth from './auth'
+import mensaje from './mensaje'
+import grupo from './grupo'
+import conversacion from './conversacion'
 
 const router = new Router()
 
@@ -29,5 +32,8 @@ const router = new Router()
  */
 router.use('/users', user)
 router.use('/auth', auth)
+router.use('/mensajes', mensaje)
+router.use('/grupos', grupo)
+router.use('/conversaciones', conversacion)
 
 export default router
