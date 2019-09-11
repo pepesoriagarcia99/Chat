@@ -1,14 +1,17 @@
 import mongoose, { Schema } from 'mongoose'
 
 const conversacionSchema = new Schema({
-  integrantes: {
-    type: String
-  },
-  mensajes: {
-    type: String
-  },
+  integrantes: [{
+    type: Schema.ObjectId,
+    ref: 'User'
+  }],
+  mensajes: [{
+    type: Schema.ObjectId,
+    ref: 'Mensaje'
+  }],
   fecha: {
-    type: String
+    type: Date,
+    default: Date.now
   }
 }, {
   timestamps: true,

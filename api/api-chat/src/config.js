@@ -39,7 +39,7 @@ const config = {
   test: { },
   development: {
     mongo: {
-      uri: 'mongodb://localhost/chat-dev',
+      uri: 'mongodb://pepe:pepe123456@ds024778.mlab.com:24778/chat-api',
       options: {
         debug: true
       }
@@ -49,7 +49,7 @@ const config = {
     ip: process.env.IP || undefined,
     port: process.env.PORT || 8080,
     mongo: {
-      uri: process.env.MONGODB_URI || 'mongodb://localhost/chat'
+      uri: process.env.MONGODB_URI || 'mongodb://pepe:pepe123456@ds024778.mlab.com:24778/chat-api'
     }
   }
 }

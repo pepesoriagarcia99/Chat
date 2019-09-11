@@ -2,13 +2,15 @@ import mongoose, { Schema } from 'mongoose'
 
 const mensajeSchema = new Schema({
   user: {
-    type: String
+    type: Schema.ObjectId,
+    ref: 'User'
   },
   cuerpo: {
     type: String
   },
   fecha: {
-    type: String
+    type: Date,
+    default: Date.now
   }
 }, {
   timestamps: true,

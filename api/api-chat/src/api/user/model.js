@@ -33,7 +33,11 @@ const userSchema = new Schema({
   picture: {
     type: String,
     trim: true
-  }
+  },
+  conversaciones: [{
+    type: Schema.ObjectId,
+    ref: 'Conversaciones'
+  }]
 }, {
   timestamps: true
 })
