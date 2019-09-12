@@ -36,4 +36,30 @@ router.use('/mensajes', mensaje)
 router.use('/grupos', grupo)
 router.use('/conversaciones', conversacion)
 
+
+
+
 export default router
+
+// var io = require("socket.io")();
+// io.on('connection', function (socket) {
+//     console.log("------------------chat");
+
+//     socket.on('chat message', function (msg) {
+//         io.emit('chat message', msg);
+//     });
+// });
+
+var app = require('express')();
+var http = require('http').Server(app);
+var io = require('socket.io')(http);
+
+// var io = require("socket.io")();
+
+io.on('connection', function (socket) {
+    socket.on('chat message', function (msg) {
+        console.log("-----------> "+msg)
+        io.emit('chat message', msg);
+    });
+});
+
